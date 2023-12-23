@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 209, 208, 208),
+        backgroundColor: Colors.grey[200],
         body: Column(
           children: [
             const SizedBox(
@@ -30,33 +30,43 @@ class LoginPage extends StatelessWidget {
             ),
             const Text(
               "Welcome Back! ",
-              style: TextStyle(fontSize: 20.0),
+              style: TextStyle(fontSize: 20.0, color: Colors.black),
             ),
             const SizedBox(
               height: 50.0,
             ),
 
             //Username Textfield
-            MyTextField(
-              controller: usernamecontroller,
-              hintText: 'Username',
-              obsecureText: false,
-            ),
-            const SizedBox(
-              height: 25.0,
-            ),
-            MyTextField(
-              controller: passwordcontroller,
-              hintText: 'Password',
-              obsecureText: true,
-            ),
-            const SizedBox(height: 25.0),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Text(
-                  "Forgot Password",
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+            Container(
+              color: Colors.grey[200],
+              child: Column(children: [
+                const SizedBox(
+                  height: 20.0,
+                ),
+                MyTextField(
+                  controller: usernamecontroller,
+                  hintText: 'Username',
+                  obsecureText: false,
+                ),
+                const SizedBox(
+                  height: 25.0,
+                ),
+                MyTextField(
+                  controller: passwordcontroller,
+                  hintText: 'Password',
+                  obsecureText: true,
+                ),
+                const SizedBox(height: 25.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Forgot Password",
+                          style: TextStyle(fontSize: 16.0, color: Colors.black),
+                        ),
+                      ]),
                 ),
               ]),
             )
