@@ -2,42 +2,64 @@ import 'package:flutter/material.dart';
 import 'package:pc_doc/components/textfield.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  //Text editing controllers
+  final usernamecontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 209, 208, 208),
+        backgroundColor: const Color.fromARGB(255, 209, 208, 208),
         body: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
             //Logo
-            Center(
+            const Center(
               child: Icon(
                 Icons.lock,
                 size: 100.0,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
-            Text(
+            const Text(
               "Welcome Back! ",
               style: TextStyle(fontSize: 20.0),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
 
             //Username Textfield
-            MyTextField(),
-            SizedBox(
-              height: 20.0,
+            MyTextField(
+              controller: usernamecontroller,
+              hintText: 'Username',
+              obsecureText: false,
             ),
-            MyTextField()
+            const SizedBox(
+              height: 25.0,
+            ),
+            MyTextField(
+              controller: passwordcontroller,
+              hintText: 'Password',
+              obsecureText: true,
+            ),
+            const SizedBox(height: 25.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Text(
+                  "Forgot Password",
+                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+                ),
+              ]),
+            )
           ],
         ),
       ),

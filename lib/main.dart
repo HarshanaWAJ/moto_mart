@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'PC Doc',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
