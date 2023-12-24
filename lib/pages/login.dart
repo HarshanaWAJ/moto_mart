@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pc_doc/components/login_button.dart';
 import 'package:pc_doc/components/textfield.dart';
+import 'dart:developer' as devLog;
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -8,9 +9,6 @@ class LoginPage extends StatelessWidget {
   //Text editing controllers
   final usernamecontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
-
-  //User Sign In method
-  userSignIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +78,18 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  LoginButton(
-                    onTap: userSignIn(),
+                  ElevatedButton(
+                    style: buttonPrimary,
+                    onPressed: () {
+                      userSignIn();
+                    },
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    ),
                   ),
                 ]),
               )
@@ -90,5 +98,10 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  //User Sign In Method
+  void userSignIn() {
+    devLog.log("Pressed Sign In Button");
   }
 }
