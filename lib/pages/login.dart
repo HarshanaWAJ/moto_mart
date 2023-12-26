@@ -1,7 +1,11 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:pc_doc/components/login_button.dart';
 import 'package:pc_doc/components/textfield.dart';
 import 'dart:developer' as devLog;
+
+import 'package:pc_doc/pages/screen.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -81,6 +85,12 @@ class LoginPage extends StatelessWidget {
                   ElevatedButton(
                     style: buttonPrimary,
                     onPressed: () {
+                      Navigator.of(context).pushNamed('/second');
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(builder: (context) {
+                      //     return const SecondScreen();
+                      //   }),
+                      //);
                       userSignIn();
                     },
                     child: const Text(
