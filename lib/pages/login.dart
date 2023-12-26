@@ -85,7 +85,9 @@ class LoginPage extends StatelessWidget {
                   ElevatedButton(
                     style: buttonPrimary,
                     onPressed: () {
+                      //Routes
                       Navigator.of(context).pushNamed('/second');
+                      //Normal Method
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(builder: (context) {
                       //     return const SecondScreen();
